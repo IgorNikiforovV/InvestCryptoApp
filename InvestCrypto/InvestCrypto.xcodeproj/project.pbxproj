@@ -10,8 +10,8 @@
 		ACA83FBA2D421FE300758BF1 /* InvestCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA83FB92D421FE300758BF1 /* InvestCryptoApp.swift */; };
 		ACA83FBC2D421FE300758BF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA83FBB2D421FE300758BF1 /* ContentView.swift */; };
 		ACA83FC12D421FE500758BF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA83FC02D421FE500758BF1 /* Preview Assets.xcassets */; };
-		ACA83FE12D4363A700758BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA83FE02D4363A700758BF1 /* Assets.xcassets */; };
 		ACA83FE42D4365CF00758BF1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA83FE32D4365CF00758BF1 /* Color.swift */; };
+		ACB26E492D44AABE009F34A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB26E482D44AABE009F34A5 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,8 +19,8 @@
 		ACA83FB92D421FE300758BF1 /* InvestCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestCryptoApp.swift; sourceTree = "<group>"; };
 		ACA83FBB2D421FE300758BF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACA83FC02D421FE500758BF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ACA83FE02D4363A700758BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/SwiftUI-Crypto-MVVM-CoreData-Combine-main/SwiftfulCrypto/Assets.xcassets"; sourceTree = "<group>"; };
 		ACA83FE32D4365CF00758BF1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		ACB26E482D44AABE009F34A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 				ACA83FE22D43657800758BF1 /* Extensons */,
 				ACA83FB92D421FE300758BF1 /* InvestCryptoApp.swift */,
 				ACA83FBB2D421FE300758BF1 /* ContentView.swift */,
-				ACA83FE02D4363A700758BF1 /* Assets.xcassets */,
+				ACB26E482D44AABE009F34A5 /* Assets.xcassets */,
 				ACA83FBF2D421FE500758BF1 /* Preview Content */,
 			);
 			path = InvestCrypto;
@@ -136,8 +136,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB26E492D44AABE009F34A5 /* Assets.xcassets in Resources */,
 				ACA83FC12D421FE500758BF1 /* Preview Assets.xcassets in Resources */,
-				ACA83FE12D4363A700758BF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
