@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4224FA2D46B81F004DDD08 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */; };
 		ACA83FBA2D421FE300758BF1 /* InvestCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA83FB92D421FE300758BF1 /* InvestCryptoApp.swift */; };
 		ACA83FBC2D421FE300758BF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA83FBB2D421FE300758BF1 /* ContentView.swift */; };
 		ACA83FC12D421FE500758BF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA83FC02D421FE500758BF1 /* Preview Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		ACA83FB62D421FE300758BF1 /* InvestCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvestCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA83FB92D421FE300758BF1 /* InvestCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestCryptoApp.swift; sourceTree = "<group>"; };
 		ACA83FBB2D421FE300758BF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB26E522D44AE3A009F34A5 /* CircleButtonView.swift */,
+				AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */,
 			);
 			path = CircleButton;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				ACA83FBA2D421FE300758BF1 /* InvestCryptoApp.swift in Sources */,
 				ACB26E532D44AE3A009F34A5 /* CircleButtonView.swift in Sources */,
 				ACA83FE42D4365CF00758BF1 /* Color.swift in Sources */,
+				AC4224FA2D46B81F004DDD08 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
