@@ -19,6 +19,7 @@ extension Double {
         let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "ru_RU")
 //        formatter.locale = .current // <- default value
 //        formatter.currencyCode = "usd" // <- change currency
 //        formatter.currencySymbol = "$" // <- change currency symbol
@@ -27,8 +28,30 @@ extension Double {
         return formatter
     }
 
+    /// Converts a Double into a Currency a String with 2-6 decimal places
+    /// ```
+    /// Convert 1234.56 to "$1,234.56"
+    /// Convert 12.3456 to "$12,2345"
+    /// Convert 0.123456 to "$0.123456"
+    /// ```
     func asCurrencyWith6Decimals() -> String {
         let number = NSNumber(value: self)
         return currencyFormatter6.string(from: number) ?? "$0.00"
+    }
+
+    /// Converts a Double into string representation
+    /// ```
+    /// Convert 1.23456 to "$1.23"
+    /// ```
+    func asNumberString() -> String {
+        String(format: "%.2f", self)
+    }
+
+    /// Converts a Double into string representation
+    /// ```
+    /// Convert 1.23456 to "$1.23"
+    /// ```
+    func asPercentString() -> String {
+        asNumberString() + "%"
     }
 }
