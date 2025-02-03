@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC4224FA2D46B81F004DDD08 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */; };
+		AC75133D2D508AD100FEF317 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75133C2D508AD100FEF317 /* HomeViewModel.swift */; };
 		AC8D827B2D4CA82800FD77F9 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D827A2D4CA82800FD77F9 /* CoinRowView.swift */; };
 		AC8D827D2D4CA91F00FD77F9 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D827C2D4CA91F00FD77F9 /* PreviewProvider.swift */; };
 		AC8D827F2D4CB1B900FD77F9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D827E2D4CB1B900FD77F9 /* Double.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
+		AC75133C2D508AD100FEF317 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC8D827A2D4CA82800FD77F9 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		AC8D827C2D4CA91F00FD77F9 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		AC8D827E2D4CB1B900FD77F9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		ACB26E4D2D44AC33009F34A5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AC75133C2D508AD100FEF317 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8D827B2D4CA82800FD77F9 /* CoinRowView.swift in Sources */,
+				AC75133D2D508AD100FEF317 /* HomeViewModel.swift in Sources */,
 				ACA83FBC2D421FE300758BF1 /* ContentView.swift in Sources */,
 				ACB26E4F2D44AC65009F34A5 /* HomeView.swift in Sources */,
 				ACA83FBA2D421FE300758BF1 /* InvestCryptoApp.swift in Sources */,
