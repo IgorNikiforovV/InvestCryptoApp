@@ -8,17 +8,17 @@
 import SwiftUI
 import Combine
 
-final class CoinImageService {
+final class ImageService {
 
     @Published var image: UIImage?
 
     private var imageSubscription: AnyCancellable?
 
     init(urlString: String) {
-        getCoinImage(urlString: urlString)
+        getImage(urlString: urlString)
     }
 
-    private func getCoinImage(urlString: String) {
+    private func getImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
 
         imageSubscription = NetworkingManager.send(with: URLRequest(url: url))
