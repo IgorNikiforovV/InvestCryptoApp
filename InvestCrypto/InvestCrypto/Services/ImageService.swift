@@ -20,7 +20,7 @@ final class ImageService {
 
     private func getImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
-
+        print("Downloading image now")
         imageSubscription = NetworkingManager.send(with: URLRequest(url: url))
             .tryMap({ data -> UIImage? in
                 UIImage(data: data)
