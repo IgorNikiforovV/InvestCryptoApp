@@ -8,17 +8,17 @@
 import SwiftUI
 import Combine
 
-final class ImageService {
+class ImageService {
 
     @Published var image: UIImage?
 
     private var imageSubscription: AnyCancellable?
+    private let fileManager = LocalFileManager.instance
+    var action: ((UIImage?) -> Void)?
 
-    init(urlString: String) {
-        getImage(urlString: urlString)
-    }
+    init(){}
 
-    private func getImage(urlString: String) {
+    func downloadImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         print("Downloading image now")
         imageSubscription = NetworkingManager.send(with: URLRequest(url: url))
@@ -28,6 +28,7 @@ final class ImageService {
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedImage in
                 self?.image = returnedImage
                 self?.imageSubscription?.cancel()
+                self?.action?(returnedImage)
             })
     }
 }
