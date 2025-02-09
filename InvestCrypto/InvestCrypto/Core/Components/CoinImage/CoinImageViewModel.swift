@@ -18,7 +18,7 @@ final class CoinImageViewModel: ObservableObject {
 
     init(coin: CoinModel) {
         self.coin = coin
-        dataService = ImageService(urlString: coin.image)
+        dataService = CoinImageService(coin: coin)
         addSubscribers()
         isLoading = true
     }
