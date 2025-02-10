@@ -11,7 +11,6 @@ import Combine
 class ImageService {
 
     @Published var image: UIImage?
-
     private var imageSubscription: AnyCancellable?
     private let fileManager = LocalFileManager.instance
     var action: ((UIImage?) -> Void)?
@@ -20,7 +19,6 @@ class ImageService {
 
     func downloadImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
-        print("Downloading image now")
         imageSubscription = NetworkingManager.send(with: URLRequest(url: url))
             .tryMap({ data -> UIImage? in
                 UIImage(data: data)
