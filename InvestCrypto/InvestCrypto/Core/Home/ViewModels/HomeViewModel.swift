@@ -41,19 +41,13 @@ final class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
 
-        marketDataService.$marketData.map { MarketDataModel -> [StatisticModel] in
-            guard let data = MarketDataModel else { return [] }
-
-            let marketCap = StatisticModel(title: "Market Cap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
-            let volume = StatisticModel(title: "24h Volume", value: data.volume)
-            let btcDominance = StatisticModel(title: "BTC Dominance", value: "$0.00", percentageChange: 0)
-            let portfolio = StatisticModel(title: "Portfolio Value", value: "$0.00", percentageChange: 0)
-            return [marketCap, volume, btcDominance, portfolio]
-        }
-        .sink { [weak self] returnedStats in
-            self?.statistics = returnedStats
-        }
-        .store(in: &cancellables)
+        // updates marketData
+        marketDataService.$marketData
+            .map(mapGlobalMarketData)
+            .sink { [weak self] returnedStats in
+                self?.statistics = returnedStats
+            }
+            .store(in: &cancellables)
     }
 
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
@@ -65,5 +59,15 @@ final class HomeViewModel: ObservableObject {
             $0.symbol.lowercased().contains(lowercasedText) ||
             $0.id.lowercased().contains(lowercasedText)
         }
+    }
+
+    private func mapGlobalMarketData(_ marketDataModel: MarketDataModel?) -> [StatisticModel] {
+        guard let data = marketDataModel else { return [] }
+
+        let marketCap = StatisticModel(title: "Market Cap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
+        let volume = StatisticModel(title: "24h Volume", value: data.volume)
+        let btcDominance = StatisticModel(title: "BTC Dominance", value: "$0.00", percentageChange: 0)
+        let portfolio = StatisticModel(title: "Portfolio Value", value: "$0.00", percentageChange: 0)
+        return [marketCap, volume, btcDominance, portfolio]
     }
 }
