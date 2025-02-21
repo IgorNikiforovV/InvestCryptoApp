@@ -21,8 +21,27 @@ final class PortfolioDataService {
             if let error {
                 print("Error loading Core Date! \(error)")
             }
+
+            self.getPortfolio()
         }
     }
+
+    // MARK: - PUBLIC
+
+    func updatePortfolio(coin: CoinModel, amount: Double) {
+        if let entity = savedEntities.first(where: { $0.coinID == $0.coinID } ) {
+            if amount > 0 {
+                update(entity: entity, amount: amount)
+            } else {
+                delete(entity: entity)
+            }
+
+        } else {
+            add(coin: coin, amount: amount)
+        }
+    }
+
+    // MARK: - PRIVATE
 
     private func getPortfolio() {
         let request = NSFetchRequest<PortfolioEntity>(entityName: entityName)
@@ -37,6 +56,7 @@ final class PortfolioDataService {
         let entity = PortfolioEntity(context: container.viewContext)
         entity.coinID = coin.id
         entity.amount = amount
+        applyChanges()
     }
 
     private func save() {
@@ -45,5 +65,20 @@ final class PortfolioDataService {
         } catch let error {
             print("Error saving to CoreData. \(error)")
         }
+    }
+
+    private func update(entity: PortfolioEntity, amount: Double) {
+        entity.amount = amount
+        getPortfolio()
+    }
+
+    private func delete(entity: PortfolioEntity) {
+        container.viewContext.delete(entity)
+        applyChanges()
+    }
+
+    private func applyChanges() {
+        save()
+        getPortfolio()
     }
 }
