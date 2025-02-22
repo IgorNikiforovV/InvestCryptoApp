@@ -35,7 +35,7 @@ final class PortfolioDataService {
             } else {
                 delete(entity: entity)
             }
-
+            
         } else {
             add(coin: coin, amount: amount)
         }
