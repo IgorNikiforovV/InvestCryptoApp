@@ -30,7 +30,7 @@ final class MarketDataService {
         getMarketData()
     }
 
-    private func getMarketData() {
+    func getMarketData() {
         marketDataSubscription = NetworkingManager.send(with: urlRequest)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion,

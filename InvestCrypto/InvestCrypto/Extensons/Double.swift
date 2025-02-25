@@ -35,11 +35,6 @@ extension Double {
         return currencyFormatter2.string(from: number) ?? "$0.00"
     }
 
-
-
-
-
-
     /// Converts a Double into a Currency with 2-6 decimal places
     /// ```
     /// Convert 1234.56 to $1,234.56
