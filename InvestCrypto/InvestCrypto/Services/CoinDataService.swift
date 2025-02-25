@@ -33,7 +33,7 @@ final class CoinDataService {
         getCoins()
     }
 
-    private func getCoins() {
+    func getCoins() {
         coinSubscription = NetworkingManager.send(with: urlRequest)
             .decode(type: [CoinModel].self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedCoins in
