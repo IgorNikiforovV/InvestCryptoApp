@@ -53,7 +53,8 @@ final class HomeViewModel: ObservableObject {
             .combineLatest(portfolioDataService.$savedEntities)
             .map (mapAllCoinsToPortfolioCoins)
             .sink { [weak self] returnedCoins in
-                self?.portfolioCoins = returnedCoins
+                guard let self else { return }
+                portfolioCoins = sortPortfolioCoinsIfNeeded(coins: returnedCoins)
             }
             .store(in: &cancellables)
 
@@ -92,14 +93,26 @@ final class HomeViewModel: ObservableObject {
         }
     }
 
+    private func sortPortfolioCoinsIfNeeded(coins: [CoinModel]) -> [CoinModel] {
+        // will only sort by holdings or reversedHoldings if needed
+        switch sortOption {
+        case .holdings:
+            coins.sorted(by: { $0.currentHoldingsValue > $1.currentHoldingsValue })
+        case .holdingsReversed:
+            coins.sorted(by: { $0.currentHoldingsValue < $1.currentHoldingsValue })
+        default:
+            coins
+        }
+    }
+
     private func filterAndSortCoins(
         text: String,
         coins: [CoinModel],
         sort: SortOption
     ) -> [CoinModel]  {
-        var filteredCoins = filterCoins(text: text, coins: coins)
-        let sortedCoins = sortCoins(sort: sort, coins: filteredCoins)
-        return sortedCoins
+        var updatedCoins = filterCoins(text: text, coins: coins)
+        sortCoins(sort: sort, coins: &updatedCoins)
+        return updatedCoins
     }
 
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
