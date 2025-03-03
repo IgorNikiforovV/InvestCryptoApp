@@ -45,21 +45,21 @@ final class CoinDataService {
     private var urlRequest: URLRequest {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: Const.currency.name, value: Const.currency.value),
-            URLQueryItem(name: Const.perPage.name, value: Const.perPage.value),
-            URLQueryItem(name: Const.page.name, value: Const.page.value),
-            URLQueryItem(name: Const.sparkline.name, value: Const.sparkline.value),
-            URLQueryItem(name: Const.percentage24.name, value: Const.percentage24.value),
+            CoinURLConst.Coin.currency,
+            CoinURLConst.Coin.page,
+            CoinURLConst.Coin.perPage,
+            CoinURLConst.Coin.sparkline,
+            CoinURLConst.Coin.percentage24,
         ]
 
         components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
 
         var request = URLRequest(url: components.url!)
-        request.httpMethod = Const.method
+        request.httpMethod = CoinURLConst.All.method
         request.timeoutInterval = 10
         request.allHTTPHeaderFields = [
-            Const.accept.name: Const.accept.value,
-            Const.key.name: Const.key.value
+            CoinURLConst.All.accept.name: CoinURLConst.All.accept.value,
+            CoinURLConst.All.key.name: CoinURLConst.All.key.value
         ]
 
         return request
