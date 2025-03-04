@@ -10,8 +10,11 @@ import Foundation
 enum CoinURLConst {
     enum All {
         static let method = "GET"
-        static let accept = (name: "accept", value: "application/json")
-        static let key = (name: "x-cg-demo-api-key", value: "CG-RspF9kDAPWeqfA2hEMgQcDYF")
+        static let timeoutInterval: TimeInterval = 10
+        static let allHTTPHeaderFields = [
+            "accept": "application/json",
+            "x-cg-demo-api-key": "CG-RspF9kDAPWeqfA2hEMgQcDYF"
+        ]
     }
     enum Coin {
         static let currency = URLQueryItem(name: "vs_currency", value: "usd")

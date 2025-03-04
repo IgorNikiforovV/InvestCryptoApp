@@ -105,13 +105,13 @@
 		AC9209392D51DDDE00CD8242 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AC8F83562D757C9A00F92417 /* CoinURLConst.swift */,
 				AC92093A2D51DE7400CD8242 /* CoinDataService.swift */,
 				AC8F83542D757C0F00F92417 /* CoinDetailDataService.swift */,
 				ACB7BF9D2D5DBDF700EB1A44 /* MarketDataService.swift */,
 				AC9E289E2D548D7F004F5C38 /* ImageService.swift */,
 				AC13ED532D5923FA0014892F /* CoinImageService.swift */,
 				AC01C9962D66FE6A00C396D5 /* PortfolioDataService.swift */,
-				AC8F83562D757C9A00F92417 /* CoinURLConst.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

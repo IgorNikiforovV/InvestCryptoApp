@@ -8,21 +8,6 @@
 import Foundation
 import Combine
 
-// MARK: Nested types
-
-extension CoinDataService {
-    private enum Const {
-        static let currency = (name: "vs_currency", value: "usd")
-        static let page = (name: "page", value: "1")
-        static let perPage = (name: "per_page", value: "50")
-        static let sparkline = (name: "sparkline", value: "true")
-        static let percentage24 = (name: "price_change_percentage", value: "24h")
-        static let method = "GET"
-        static let accept = (name: "accept", value: "application/json")
-        static let key = (name: "x-cg-demo-api-key", value: "CG-RspF9kDAPWeqfA2hEMgQcDYF")
-    }
-}
-
 final class CoinDataService {
     @Published var allCoins: [CoinModel] = []
     private var coinSubscription: AnyCancellable?
@@ -51,16 +36,11 @@ final class CoinDataService {
             CoinURLConst.Coin.sparkline,
             CoinURLConst.Coin.percentage24,
         ]
-
         components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
-
         var request = URLRequest(url: components.url!)
         request.httpMethod = CoinURLConst.All.method
-        request.timeoutInterval = 10
-        request.allHTTPHeaderFields = [
-            CoinURLConst.All.accept.name: CoinURLConst.All.accept.value,
-            CoinURLConst.All.key.name: CoinURLConst.All.key.value
-        ]
+        request.timeoutInterval = CoinURLConst.All.timeoutInterval
+        request.allHTTPHeaderFields = CoinURLConst.All.allHTTPHeaderFields
 
         return request
     }
