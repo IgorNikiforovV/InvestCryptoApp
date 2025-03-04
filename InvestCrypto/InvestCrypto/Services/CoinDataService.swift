@@ -8,21 +8,6 @@
 import Foundation
 import Combine
 
-// MARK: Nested types
-
-extension CoinDataService {
-    private enum Const {
-        static let currency = (name: "vs_currency", value: "usd")
-        static let page = (name: "page", value: "1")
-        static let perPage = (name: "per_page", value: "50")
-        static let sparkline = (name: "sparkline", value: "true")
-        static let percentage24 = (name: "price_change_percentage", value: "24h")
-        static let method = "GET"
-        static let accept = (name: "accept", value: "application/json")
-        static let key = (name: "x-cg-demo-api-key", value: "CG-RspF9kDAPWeqfA2hEMgQcDYF")
-    }
-}
-
 final class CoinDataService {
     @Published var allCoins: [CoinModel] = []
     private var coinSubscription: AnyCancellable?
@@ -45,22 +30,17 @@ final class CoinDataService {
     private var urlRequest: URLRequest {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: Const.currency.name, value: Const.currency.value),
-            URLQueryItem(name: Const.perPage.name, value: Const.perPage.value),
-            URLQueryItem(name: Const.page.name, value: Const.page.value),
-            URLQueryItem(name: Const.sparkline.name, value: Const.sparkline.value),
-            URLQueryItem(name: Const.percentage24.name, value: Const.percentage24.value),
+            CoinURLConst.Coin.currency,
+            CoinURLConst.Coin.page,
+            CoinURLConst.Coin.perPage,
+            CoinURLConst.Coin.sparkline,
+            CoinURLConst.Coin.percentage24,
         ]
-
         components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
-
         var request = URLRequest(url: components.url!)
-        request.httpMethod = Const.method
-        request.timeoutInterval = 10
-        request.allHTTPHeaderFields = [
-            Const.accept.name: Const.accept.value,
-            Const.key.name: Const.key.value
-        ]
+        request.httpMethod = CoinURLConst.All.method
+        request.timeoutInterval = CoinURLConst.All.timeoutInterval
+        request.allHTTPHeaderFields = CoinURLConst.All.allHTTPHeaderFields
 
         return request
     }
