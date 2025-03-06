@@ -36,6 +36,14 @@ struct DetailView: View {
                     .bold()
                     .foregroundStyle(Color.theme.accent)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
+
+                Text("Additional Details")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(Color.theme.accent)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
             }
         }
         .navigationTitle(vm.coin.name)
