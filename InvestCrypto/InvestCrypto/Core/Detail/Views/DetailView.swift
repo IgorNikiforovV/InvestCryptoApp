@@ -20,7 +20,12 @@ struct DetailLoadingView: View {
 }
 
 struct DetailView: View {
-    @StateObject var vm: DetailViewModel
+    @StateObject private var vm: DetailViewModel
+    private let columns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+    private let spacing: CGFloat = 30
 
     init(coin: CoinModel) {
         _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
@@ -38,13 +43,34 @@ struct DetailView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
 
+                LazyVGrid(
+                    columns: columns,
+                    alignment: .leading,
+                    spacing: nil,
+                    content: {
+                        ForEach(vm.overviewStatistics) { stat in
+                            StatisticView(stat: stat)
+                        }
+                })
+
                 Text("Additional Details")
                     .font(.title)
                     .bold()
                     .foregroundStyle(Color.theme.accent)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
+
+                LazyVGrid(
+                    columns: columns,
+                    alignment: .leading,
+                    spacing: nil,
+                    content: {
+                        ForEach(vm.additionalStatistics) { stat in
+                            StatisticView(stat: stat)
+                        }
+                })
             }
+            .padding()
         }
         .navigationTitle(vm.coin.name)
     }
