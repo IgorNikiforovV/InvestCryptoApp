@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC01C9952D66FDAE00C396D5 /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC01C9932D66FDAE00C396D5 /* PortfolioContainer.xcdatamodeld */; };
 		AC01C9972D66FE6A00C396D5 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01C9962D66FE6A00C396D5 /* PortfolioDataService.swift */; };
+		AC0C3DA52D8A8C0B0076EA58 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0C3DA42D8A8C0B0076EA58 /* ChartView.swift */; };
 		AC12E9812D6D986A00987988 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E9802D6D986A00987988 /* HapticManager.swift */; };
 		AC13ED542D5923FA0014892F /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13ED532D5923FA0014892F /* CoinImageService.swift */; };
 		AC4224FA2D46B81F004DDD08 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		AC01C9942D66FDAE00C396D5 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		AC01C9962D66FE6A00C396D5 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
+		AC0C3DA42D8A8C0B0076EA58 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		AC12E9802D6D986A00987988 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		AC13ED532D5923FA0014892F /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		AC4224F92D46B81F004DDD08 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA006972D723C4D00184715 /* DetailView.swift */,
+				AC0C3DA42D8A8C0B0076EA58 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				ACFF17FF2D5C713B009F8340 /* HomeStatsView.swift in Sources */,
 				AC8DEED52D630C8700B1C060 /* CoinLogoView.swift in Sources */,
 				AC8F83512D7576FE00F92417 /* CoinDetailModel.swift in Sources */,
+				AC0C3DA52D8A8C0B0076EA58 /* ChartView.swift in Sources */,
 				ACAB10192D59CC3100C8C324 /* UIApplication.swift in Sources */,
 				AC8F83552D757C0F00F92417 /* CoinDetailDataService.swift in Sources */,
 				AC9E289D2D548A92004F5C38 /* CoinImageView.swift in Sources */,

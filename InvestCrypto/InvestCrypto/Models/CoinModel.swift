@@ -87,6 +87,7 @@ struct CoinModel: Identifiable, Codable {
     let atlDate: String?
     let lastUpdated: String?
     let currentHoldings: Double?
+    let sparklineIn7D: SparklineIn7D?
 
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, image
@@ -112,6 +113,11 @@ struct CoinModel: Identifiable, Codable {
         case atlDate = "atl_date"
         case lastUpdated = "last_updated"
         case currentHoldings
+        case sparklineIn7D = "sparkline_in_7d"
+    }
+
+    struct SparklineIn7D: Codable {
+        let price: [Double]?
     }
 
     func updateHoldings(amount: Double) -> CoinModel {
@@ -141,7 +147,8 @@ struct CoinModel: Identifiable, Codable {
             atlChangePercentage: atlChangePercentage,
             atlDate: atlDate,
             lastUpdated: lastUpdated,
-            currentHoldings: amount
+            currentHoldings: amount,
+            sparklineIn7D: sparklineIn7D
         )
     }
 
