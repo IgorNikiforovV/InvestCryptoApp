@@ -69,7 +69,7 @@ extension SettingsView {
                     .foregroundColor(Color.theme.accent)
             }
             .padding(.vertical)
-            Link("Visit CoinGecko 💰", destination: coingeckoURL)
+            Link("Visit CoinGecko 🦎", destination: coingeckoURL)
         }
     }
 
