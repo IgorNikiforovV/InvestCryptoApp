@@ -118,6 +118,7 @@
 		AC07CCE92D9BB57900D8398E /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				AC07CCEA2D9BB5A100D8398E /* Views */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -125,6 +126,7 @@
 		AC07CCEA2D9BB5A100D8398E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AC07CCEE2D9BBB5D00D8398E /* LaunchView.swift */,
 				AC07CCEB2D9BB5B500D8398E /* Launch Screen.storyboard */,
 			);
 			path = Views;
@@ -272,7 +274,6 @@
 		ACB26E4A2D44ABF0009F34A5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AC07CCEA2D9BB5A100D8398E /* Views */,
 				AC07CCE92D9BB57900D8398E /* Launch */,
 				ACB26E502D44ADF3009F34A5 /* Components */,
 				ACB26E4B2D44AC0F009F34A5 /* Home */,
@@ -306,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				AC75133C2D508AD100FEF317 /* HomeViewModel.swift */,
-				AC07CCEE2D9BBB5D00D8398E /* LaunchView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
