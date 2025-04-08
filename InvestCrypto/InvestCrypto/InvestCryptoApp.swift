@@ -11,6 +11,7 @@ import SwiftUI
 struct InvestCryptoApp: App {
     
     @StateObject private var vm = HomeViewModel()
+    @State private var showLaunchView = true
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
@@ -26,7 +27,13 @@ struct InvestCryptoApp: App {
                 }
                 .environmentObject(vm)
 
-                LaunchView()
+                ZStack {
+                    if showLaunchView {
+                        LaunchView(showLaunchView: $showLaunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .zIndex(2.0)
             }
         }
     }
