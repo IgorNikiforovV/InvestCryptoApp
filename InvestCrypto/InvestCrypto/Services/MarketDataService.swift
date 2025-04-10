@@ -33,6 +33,7 @@ final class MarketDataService {
     func getMarketData() {
         marketDataSubscription = NetworkingManager.send(with: urlRequest)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetworkingManager.handleCompletion,
                   receiveValue: { [weak self] returnedMarGlobalData in
                 self?.marketData = returnedMarGlobalData.data
