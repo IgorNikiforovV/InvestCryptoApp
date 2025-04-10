@@ -28,9 +28,8 @@ final class NetworkingManager {
     static func send(with urlRequest: URLRequest) -> AnyPublisher<Data, Error>
     {
         URLSession.shared.dataTaskPublisher(for: urlRequest)
-            .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap { try handleURLResponse(output: $0, url: urlRequest.url) }
-            .receive(on: DispatchQueue.main)
+            .retry(3)
             .eraseToAnyPublisher()
     }
 
